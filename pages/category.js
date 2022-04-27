@@ -59,7 +59,7 @@ console.log(category)
         <div className='md:-mt-28 overflow-x-auto md:w-[550px] md:mx-52 lg:overflow-visible  
         mt-64 lg:mx-96 pl-20 w-96  '>
          <h2 className='font-bold md:absolute md:-mt-14 text-lg'>Categories</h2>
-            <table class="table-auto  md:w-full w-32 border-collapse border border-slate-400 ...">
+            <table className="table-auto  md:w-full w-32 border-collapse border border-slate-400 ...">
   <thead className='bg-orange-400'>
     <tr>
       <th className="border border-slate-300 ...">Sr.</th>
