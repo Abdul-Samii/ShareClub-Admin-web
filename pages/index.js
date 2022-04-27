@@ -1,9 +1,12 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Header, Menu } from '../components'
+import { Provider } from 'react-redux'
+import { Store } from '../store/Store'
 
 export default function Home() {
   return (
+    <Provider store={Store}>
     <div >
       <Head>
         <title>Create Next App</title>
@@ -20,5 +23,6 @@ export default function Home() {
         
       </footer>
     </div>
+    </Provider>
   )
 }
