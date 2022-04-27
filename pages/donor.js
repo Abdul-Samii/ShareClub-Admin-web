@@ -9,13 +9,13 @@ const handleApprove=(id)=>{
   const obj={
     donorId:id
   }
-  fetch('http://localhost:6600/admin/approvedonor', {
+  fetch('http://fyyp.herokuapp.com/admin/approvedonor', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(obj),
-  })
+  }),
   router.reload(window.location.pathname)
 
 }
@@ -23,13 +23,13 @@ const handleReject=(id)=>{
   const obj={
     donorId:id
   }
-  fetch('http://localhost:6600/admin/rejectdonor', {
+  fetch('http://fyyp.herokuapp.com/admin/rejectdonor', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(obj),
-  })
+  }),
   router.reload(window.location.pathname)
 
 }
@@ -70,11 +70,11 @@ const handleReject=(id)=>{
           <td class="border px-6 py-4 text-center border-slate-300 ...">
             {item.signupType==1&&'Email' || item.signupType==2&&'Facebook' || item.signupType==3&&'Google'}</td>
 
-          <div className='space-x-2 mt-6 mx-1 justify-center flex '>
+          <td className='space-x-2 mt-6 mx-1 justify-center flex '>
           <button onClick={()=>handleApprove(item._id)} class="bg-orange-400 px-1 py-1 text-white rounded-sm hover:bg-orange-300">Approve</button>
           <button onClick={()=>handleReject(item._id)} class="bg-red-400 px-3 text-white rounded-sm hover:bg-red-300">Reject</button>
     
-          </div>
+          </td>
     
         </tr>
         )
@@ -95,7 +95,7 @@ export default Donor
 
 export async function getServerSideProps() {
   // Fetch data from external API
-  const res = await fetch(`http://localhost:6600/admin/donorrequests`)
+  const res = await fetch(`http://fyyp.herokuapp.com/admin/donorrequests`)
   const data = await res.json()
 
   // Pass data to the page via props
